@@ -7,74 +7,54 @@
         </div>
     </section>
     <section class="main-section" id="featured-section">
-        <h2 class="section-title">Featured Posts</h2>
-        <form method="get" class="posts-form">
-            {{range .FeaturedPosts}}
-            <div class="post-card">
-                <div class="post-titlebar">
-                    <div class="post-title">{{.Title}}</div>
-                    <div class="post-toolbar-buttons">
-                        <button class="minimize">
-                            <svg viewBox="0 0 10 10">
-                                <rect x="1" y="4" width="8" height="2" />
-                            </svg>
-                        </button>
-                        <button class="maximize" value="maximize" type="submit" formaction="/post/{{.ID}}">
-                            <svg viewBox="0 0 10 10">
-                                <rect x="1" y="1" width="8" height="8" />
-                            </svg>
-                        </button>
-                        <button class="close">
-                            <svg viewBox="0 0 10 10">
-                                <polygon points="1,1 9,9 9,1 1,9" />
-                            </svg>
-                        </button>
+        <div id="posts-section" class="home-featured">
+            <h2 class="section-title">Featured Posts</h2>
+            <div class="posts-container">
+                {{range .FeaturedPosts}}
+                <div class="post-card" onclick="location.href='/post/{{.ID}}'">
+                    <div class="post-titlebar">
+                        <div class="post-title">{{.Title}}</div>
+                        <div class="post-toolbar-buttons">
+                            <button class="maximize" type="button" onclick="event.stopPropagation(); location.href='/post/{{.ID}}'">
+                                <svg viewBox="0 0 10 10"><rect x="1" y="1" width="8" height="8" /></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="post-body">
+                        <div class="post-content">{{.Preview}}</div>
+                        <div class="post-info"><small>Posted by {{.Username}} on {{.CreatedAt.Format "2006-01-02 15:04"}}</small></div>
                     </div>
                 </div>
-                <div class="post-body">
-                    <div class="post-content">{{.Preview}}</div>
-                    <div class="post-info"><small>Posted by {{.Username}} on {{.CreatedAt.Format "2006-01-02 15:04"}}</small></div>
-                </div>
+                {{else}}
+                <p>No posts found.</p>
+                {{end}}
             </div>
-            {{else}}
-            <p>No posts found.</p>
-            {{end}}
-        </form>
+        </div>
     </section>
     <section id="latest-section" class="main-section">
-        <h2 class="section-title">Latest Posts</h2>
-        <form method="get" class="posts-form">
-            {{range .LatestPosts}}
-            <div class="post-card">
-                <div class="post-titlebar">
-                    <div class="post-title">{{.Title}}</div>
-                    <div class="post-toolbar-buttons">
-                        <button class="minimize">
-                            <svg viewBox="0 0 10 10">
-                                <rect x="1" y="4" width="8" height="2" />
-                            </svg>
-                        </button>
-                        <button class="maximize" value="maximize" type="submit" formaction="/post/{{.ID}}">
-                            <svg viewBox="0 0 10 10">
-                                <rect x="1" y="1" width="8" height="8" />
-                            </svg>
-                        </button>
-                        <button class="close">
-                            <svg viewBox="0 0 10 10">
-                                <polygon points="1,1 9,9 9,1 1,9" />
-                            </svg>
-                        </button>
+        <div id="posts-section" class="home-latest">
+            <h2 class="section-title">Latest Posts</h2>
+            <div class="posts-container">
+                {{range .LatestPosts}}
+                <div class="post-card" onclick="location.href='/post/{{.ID}}'">
+                    <div class="post-titlebar">
+                        <div class="post-title">{{.Title}}</div>
+                        <div class="post-toolbar-buttons">
+                            <button class="maximize" type="button" onclick="event.stopPropagation(); location.href='/post/{{.ID}}'">
+                                <svg viewBox="0 0 10 10"><rect x="1" y="1" width="8" height="8" /></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="post-body">
+                        <div class="post-content">{{.Preview}}</div>
+                        <div class="post-info"><small>Posted by {{.Username}} on {{.CreatedAt.Format "2006-01-02 15:04"}}</small></div>
                     </div>
                 </div>
-                <div class="post-body">
-                    <div class="post-content">{{.Preview}}</div>
-                    <div class="post-info"><small>Posted by {{.Username}} on {{.CreatedAt.Format "2006-01-02 15:04"}}</small></div>
-                </div>
+                {{else}}
+                <p>No posts found.</p>
+                {{end}}
             </div>
-            {{else}}
-            <p>No posts found.</p>
-            {{end}}
-        </form>
+        </div>
     </section>
 </div>
 {{end}}

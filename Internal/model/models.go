@@ -74,6 +74,7 @@ type Category struct {
 
 type PageData struct {
 	IsLoggedIn         bool
+	IsHome             bool
 	FeaturedPosts      []Post
 	LatestPosts        []Post
 	Post               *Post
@@ -84,8 +85,6 @@ type PageData struct {
 	User               *User
 	ErrorMsg           string
 	ErrorCode          int
-	CSSFile            string
-	ExtraCSS           []string
 	Theme              any // dynamic theme (struct with exported color fields) or nil
 }
 

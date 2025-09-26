@@ -48,8 +48,8 @@ body {
 @keyframes float { 0%,100% { transform: translateY(0) rotate(0);} 33% { transform: translateY(-20px) rotate(120deg);} 66% { transform: translateY(10px) rotate(240deg);} }
 @media (prefers-reduced-motion: reduce) { .bg-circle, .float-item { animation: none !important; } }
 
-.golang-layout { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 280px 1fr; gap: var(--go-spacing); padding: var(--go-spacing); min-height: 100vh; }
-.golang-layout.no-sidebar { grid-template-columns: 1fr; }
+.golang-layout, .category-layout { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 280px 1fr; gap: var(--go-spacing); padding: var(--go-spacing); min-height: 100vh; }
+.golang-layout.no-sidebar, .category-layout.no-sidebar { grid-template-columns: 1fr; }
 .golang-sidebar { background: var(--go-bg-card); border-radius: var(--go-radius); padding: var(--go-spacing); box-shadow: var(--go-shadow); border: 1px solid var(--go-border-light); height: fit-content; position: sticky; top: var(--go-spacing); }
 .sidebar-content { display: flex; flex-direction: column; gap: var(--go-spacing); }
 .logo-section { text-align: center; padding-bottom: var(--go-spacing); border-bottom: 1px solid var(--go-border-light); }
@@ -69,28 +69,28 @@ body {
 .stat-number { display: block; font-size: 1.5rem; font-weight: 700; color: var(--go-accent); }
 .stat-label { font-size: 0.85rem; color: var(--go-text-muted); }
 
-.golang-main { display: flex; flex-direction: column; gap: var(--go-spacing); }
-.go-hero, .golang-hero { background: linear-gradient(135deg, var(--go-bg-card) 0%, var(--go-bg-elevated) 100%); border-radius: var(--go-radius); padding: 40px; box-shadow: var(--go-shadow-strong); border: 1px solid var(--go-border); position: relative; overflow: hidden; }
-.go-hero::before, .golang-hero::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 2px; background: linear-gradient(90deg, var(--go-accent), var(--go-secondary), var(--go-accent)); }
-.go-hero-content, .golang-hero-content { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
+.golang-main, .category-main { display: flex; flex-direction: column; gap: var(--go-spacing); }
+.go-hero, .golang-hero, .category-hero { background: linear-gradient(135deg, var(--go-bg-card) 0%, var(--go-bg-elevated) 100%); border-radius: var(--go-radius); padding: 40px; box-shadow: var(--go-shadow-strong); border: 1px solid var(--go-border); position: relative; overflow: hidden; }
+.go-hero::before, .golang-hero::before, .category-hero::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 2px; background: linear-gradient(90deg, var(--go-accent), var(--go-secondary), var(--go-accent)); }
+.go-hero-content, .golang-hero-content, .category-hero-content { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
 
 .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, var(--go-accent), var(--go-accent-dark)); color: #fff; padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3); }
 .badge-icon { font-size: 1.1rem; }
 
-.go-title, .golang-title { font-size: 3.5rem; font-weight: 700; margin-bottom: 16px; line-height: 1.1; }
+.go-title, .golang-title, .category-title { font-size: 3.5rem; font-weight: 700; margin-bottom: 16px; line-height: 1.1; }
 .title-highlight { color: var(--go-accent); display: block; }
 .title-main { background: linear-gradient(135deg, var(--go-text-primary), var(--go-accent-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.go-subtitle, .golang-subtitle { font-size: 1.3rem; color: var(--go-accent); margin-bottom: 16px; font-weight: 600; }
-.go-desc, .golang-desc { font-size: 1.1rem; color: var(--go-text-secondary); line-height: 1.7; margin-bottom: 32px; }
+.go-subtitle, .golang-subtitle, .category-subtitle { font-size: 1.3rem; color: var(--go-accent); margin-bottom: 16px; font-weight: 600; }
+.go-desc, .golang-desc, .category-desc { font-size: 1.1rem; color: var(--go-text-secondary); line-height: 1.7; margin-bottom: 32px; }
 
-.go-actions, .golang-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-.go-btn, .golang-btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 24px; border-radius: var(--go-radius-small); text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; position: relative; overflow: hidden; }
-.go-btn.primary, .golang-btn.primary { background: linear-gradient(135deg, var(--go-accent), var(--go-accent-dark)); color: #fff; box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4); }
-.go-btn.primary:hover, .golang-btn.primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0, 212, 255, 0.6); }
-.go-btn.secondary, .golang-btn.secondary { background: var(--go-bg-elevated); color: var(--go-accent); border: 2px solid var(--go-accent); }
-.go-btn.secondary:hover, .golang-btn.secondary:hover { background: var(--go-accent); color: #fff; transform: translateY(-2px); }
+.go-actions, .golang-actions, .category-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+.go-btn, .golang-btn, .category-btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 24px; border-radius: var(--go-radius-small); text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; position: relative; overflow: hidden; }
+.go-btn.primary, .golang-btn.primary, .category-btn.primary { background: linear-gradient(135deg, var(--go-accent), var(--go-accent-dark)); color: #fff; box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4); }
+.go-btn.primary:hover, .golang-btn.primary:hover, .category-btn.primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0, 212, 255, 0.6); }
+.go-btn.secondary, .golang-btn.secondary, .category-btn.secondary { background: var(--go-bg-elevated); color: var(--go-accent); border: 2px solid var(--go-accent); }
+.go-btn.secondary:hover, .golang-btn.secondary:hover, .category-btn.secondary:hover { background: var(--go-accent); color: #fff; transform: translateY(-2px); }
 .btn-icon { font-size: 1.1rem; }
-.go-hero-art, .golang-hero-art { position: relative; }
+.go-hero-art, .golang-hero-art, .category-hero-art { position: relative; }
 .art-container { position: relative; height: 400px; }
 .floating-elements { position: absolute; inset: 0; }
 .float-item { position: absolute; background: linear-gradient(135deg, var(--go-accent), var(--go-secondary)); color: #fff; padding: 8px 16px; border-radius: var(--go-radius-small); font-weight: 600; font-size: 0.9rem; box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3); animation: floatAround 15s infinite ease-in-out; }
@@ -116,7 +116,7 @@ body {
 .string { color: #f1fa8c; }
 .function { color: #50fa7b; }
 
-.go-features { margin: var(--go-spacing) 0; }
+.go-features, .category-features { margin: var(--go-spacing) 0; }
 .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
 .feature-card { background: var(--go-bg-card); padding: 24px; border-radius: var(--go-radius); text-align: center; border: 1px solid var(--go-border-light); transition: all 0.3s ease; position: relative; overflow: hidden; }
 .feature-card::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 2px; background: linear-gradient(90deg, var(--go-accent), var(--go-secondary)); transform: scaleX(0); transition: transform 0.3s ease; }
@@ -175,14 +175,14 @@ body {
 .post-badge { position: absolute; top: 10px; left: 12px; background: linear-gradient(135deg, var(--go-secondary), #6d28d9); color: #fff; padding: 2px 10px; border-radius: 10px; font-size: 0.78rem; font-weight: 700; }
 .go-post-card::before { content: ""; position: absolute; left: 0; top: 0; width: 3px; height: 100%; background: linear-gradient(180deg, var(--go-secondary), transparent); opacity: 0; transition: opacity 0.18s ease; }
 .go-post-card:hover::before { opacity: 0.8; }
-.golang-main { --np-accent: var(--go-accent); --np-accent-600: color-mix(in oklab, var(--go-accent) 85%, black); --np-accent-400: color-mix(in oklab, var(--go-accent) 65%, white); }
-.golang-main .go-post-card { border: 1px solid color-mix(in oklab, var(--np-accent) 45%, transparent); box-shadow: 0 0 0 1px color-mix(in oklab, var(--np-accent) 18%, transparent) inset, 0 10px 28px rgba(0,0,0,0.35); }
-.golang-main .go-post-card:hover { border-color: color-mix(in oklab, var(--np-accent) 65%, transparent); box-shadow: 0 0 0 1px color-mix(in oklab, var(--np-accent) 26%, transparent) inset, 0 16px 36px rgba(0,0,0,0.45); }
-.golang-main .go-post-card .np-titlebar { background: linear-gradient(180deg, color-mix(in oklab, var(--np-accent) 35%, transparent), color-mix(in oklab, var(--np-accent) 15%, transparent)); border-bottom: 1px solid color-mix(in oklab, var(--np-accent) 55%, transparent); }
-.golang-main .np-titlebar .np-title { color: color-mix(in oklab, var(--np-accent) 20%, #ffffff); }
-.golang-main .go-post-card.featured { border: 2px solid color-mix(in oklab, var(--np-accent) 70%, transparent); }
-.golang-main .post-badge { background: linear-gradient(135deg, var(--np-accent), var(--np-accent-600)); }
-.golang-main .go-post-card::before { background: linear-gradient(180deg, var(--np-accent), transparent); width: 3px; }
+.golang-main, .category-main { --np-accent: var(--go-accent); --np-accent-600: color-mix(in oklab, var(--go-accent) 85%, black); --np-accent-400: color-mix(in oklab, var(--go-accent) 65%, white); }
+.golang-main .go-post-card, .category-main .go-post-card { border: 1px solid color-mix(in oklab, var(--np-accent) 45%, transparent); box-shadow: 0 0 0 1px color-mix(in oklab, var(--np-accent) 18%, transparent) inset, 0 10px 28px rgba(0,0,0,0.35); }
+.golang-main .go-post-card:hover, .category-main .go-post-card:hover { border-color: color-mix(in oklab, var(--np-accent) 65%, transparent); box-shadow: 0 0 0 1px color-mix(in oklab, var(--np-accent) 26%, transparent) inset, 0 16px 36px rgba(0,0,0,0.45); }
+.golang-main .go-post-card .np-titlebar, .category-main .go-post-card .np-titlebar { background: linear-gradient(180deg, color-mix(in oklab, var(--np-accent) 35%, transparent), color-mix(in oklab, var(--np-accent) 15%, transparent)); border-bottom: 1px solid color-mix(in oklab, var(--np-accent) 55%, transparent); }
+.golang-main .np-titlebar .np-title, .category-main .np-titlebar .np-title { color: color-mix(in oklab, var(--np-accent) 20%, #ffffff); }
+.golang-main .go-post-card.featured, .category-main .go-post-card.featured { border: 2px solid color-mix(in oklab, var(--np-accent) 70%, transparent); }
+.golang-main .post-badge, .category-main .post-badge { background: linear-gradient(135deg, var(--np-accent), var(--np-accent-600)); }
+.golang-main .go-post-card::before, .category-main .go-post-card::before { background: linear-gradient(180deg, var(--np-accent), transparent); width: 3px; }
 
 #posts-section { margin-top: 24px; }
 #posts-section .section-title { font-size: 1.8rem; font-weight: 800; margin: 0 0 14px; color: var(--go-text-primary); }
@@ -206,8 +206,8 @@ body {
 #posts-section .post-body.is-collapsed { display: none; }
 #posts-section .post-card.is-expanded { grid-column: 1 / -1; }
 
-@media (max-width: 1024px) { .golang-layout { grid-template-columns: 1fr; gap: 16px; padding: 16px; } .golang-sidebar { order: 2; position: static; } .golang-main { order: 1; } .go-hero-content, .golang-hero-content { grid-template-columns: 1fr; gap: 24px; text-align: center; } .go-title, .golang-title { font-size: 2.5rem; } .features-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); } .go-posts-header { flex-direction: column; align-items: stretch; } .posts-filter { justify-content: center; } }
-@media (max-width: 768px) { .go-hero, .golang-hero { padding: 24px; } .go-title, .golang-title { font-size: 2rem; } .go-actions, .golang-actions { justify-content: center; } .go-btn, .golang-btn { padding: 12px 20px; font-size: 0.9rem; } .features-grid { grid-template-columns: 1fr; } .go-posts { padding: 20px; } .posts-filter { flex-wrap: wrap; } .filter-btn { flex: 1; min-width: 80px; } }
+@media (max-width: 1024px) { .golang-layout, .category-layout { grid-template-columns: 1fr; gap: 16px; padding: 16px; } .golang-sidebar { order: 2; position: static; } .golang-main, .category-main { order: 1; } .go-hero-content, .golang-hero-content, .category-hero-content { grid-template-columns: 1fr; gap: 24px; text-align: center; } .go-title, .golang-title, .category-title { font-size: 2.5rem; } .features-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); } .go-posts-header { flex-direction: column; align-items: stretch; } .posts-filter { justify-content: center; } }
+@media (max-width: 768px) { .go-hero, .golang-hero, .category-hero { padding: 24px; } .go-title, .golang-title, .category-title { font-size: 2rem; } .go-actions, .golang-actions, .category-actions { justify-content: center; } .go-btn, .golang-btn, .category-btn { padding: 12px 20px; font-size: 0.9rem; } .features-grid { grid-template-columns: 1fr; } .go-posts { padding: 20px; } .posts-filter { flex-wrap: wrap; } .filter-btn { flex: 1; min-width: 80px; } }
 
 /* Scrollbar styling */
 ::-webkit-scrollbar { width: 8px; }

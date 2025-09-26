@@ -54,7 +54,6 @@ func (server *Server) Get_CreatePostHandler(w http.ResponseWriter, r *http.Reque
 			IsLoggedIn: true,
 			User:       user,
 			Categories: categories,
-			CSSFile:    "./web/static/css/newtyles.css",
 		},
 	}
 
@@ -210,11 +209,7 @@ func renderCreatePost(
 
 	// Session & user already validated in caller; user retrieval omitted here for simplicity.
 
-	pageData := model.PageData{
-		IsLoggedIn: true,
-		Categories: categories,
-		CSSFile:    "./web/static/css/newtyles.css",
-	}
+	pageData := model.PageData{IsLoggedIn: true, Categories: categories}
 
 	data := CreatePostPageData{
 		PageData:           pageData,
