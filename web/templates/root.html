@@ -5,10 +5,38 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        {{if .CSSFile}}<link rel="stylesheet" href="{{.CSSFile}}">{{end}}
-        <link rel="stylesheet" href="/web/static/css/catagory-base.css">
-        <link rel="stylesheet" href="/web/static/css/root.css">
-        {{range .ExtraCSS}}<link rel="stylesheet" href="{{.}}">{{end}}
+        <link rel="stylesheet" href="/web/static/css/app.css">
+        {{if .IsHome}}
+        <style id="home-purple-theme">
+                /* Purple home style variables (only when home) */
+                body.home-page.home-purple {
+                        --go-accent: #a855f7;
+                        --go-accent-dark: #7e22ce;
+                        --go-accent-light: #c084fc;
+                        --go-secondary: #6366f1;
+                        --go-bg-primary: #0b0614;
+                        --go-bg-secondary: #140a24;
+                        --go-bg-card: #1e1231;
+                        --go-bg-elevated: #28163f;
+                        --go-text-primary: #f5f3ff;
+                        --go-text-secondary: #d9d6e5;
+                        --go-text-muted: #a59fb3;
+                        --go-border: #3d284f;
+                        --go-border-light: #2a1b3a;
+                        --go-shadow: 0 10px 25px rgba(168,85,247,0.18);
+                        --go-shadow-strong: 0 20px 45px -8px rgba(168,85,247,0.35);
+                        --go-radius: 18px;
+                        --go-radius-small: 10px;
+                        --go-spacing: 26px;
+                        --primary-color: var(--go-accent);
+                        --secondary-color: var(--go-secondary);
+                        --background-color: var(--go-bg-primary);
+                        --quaternary-color: var(--go-bg-secondary);
+                        --border-color: var(--go-border);
+                        --text-color: var(--go-text-primary);
+                }
+        </style>
+        {{end}}
         {{if .Theme}}
         <style id="dynamic-category-theme">
                 :root {
@@ -30,12 +58,19 @@
                         --go-radius: {{.Theme.Radius}};
                         --go-radius-small: {{.Theme.RadiusSmall}};
                         --go-spacing: {{.Theme.Spacing}};
+                        /* legacy variable mapping so old styles react to theme */
+                        --primary-color: {{.Theme.Accent}};
+                        --secondary-color: {{.Theme.Secondary}};
+                        --background-color: {{.Theme.BgPrimary}};
+                        --quaternary-color: {{.Theme.BgSecondary}};
+                        --border-color: {{.Theme.Border}};
+                        --text-color: {{.Theme.TextPrimary}};
                 }
         </style>
         {{end}}
 </head>
 
-<body id="root-body">
+<body id="root-body" class="{{if .IsHome}}home-page home-purple{{end}}">
         <nav id="sidebar">
                 <div class="sidebar-container">
                         <input hidden type="checkbox" name="sidebar-toggle" id="sidebar-toggle">

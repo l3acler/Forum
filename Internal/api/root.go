@@ -67,13 +67,12 @@ func (server *Server) Get_HomeHandler(w http.ResponseWriter, r *http.Request) {
 
 	pageData := model.PageData{
 		IsLoggedIn:    isLoggedIn,
+		IsHome:        true,
 		User:          user,
 		FeaturedPosts: featuredPosts,
 		LatestPosts:   LatestPosts,
 		Categories:    categories,
-		CSSFile:       "/web/static/css/newtyles.css",
-		ExtraCSS:      nil,
-		Theme:         nil, // home uses fallback variables defined in catagory-base.css
+		Theme:         nil,
 	}
 
 	// Pass posts to the template
