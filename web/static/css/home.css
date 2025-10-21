@@ -34,25 +34,27 @@
 .card {
     width: 360px;
     height: 300px;
-    background: #15001f;
-    border: 1px solid #c042ff;
+    background: linear-gradient(135deg, #ffe6f5, #ffc0e5);
+    border: 3px solid #ff1493;
     font-size: 14px;
     font-family: monospace;
     overflow: auto;
-    border-radius: 4px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(255, 20, 147, 0.3), 0 0 20px rgba(255, 105, 180, 0.2);
 }
 
 .titlebar {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 21px;
-    font-weight: 450;
-    background-color: #2e0043;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
     width: 100%;
     text-align: right;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 2px 8px rgba(255, 20, 147, 0.3);
 }
 
 .post-title {
@@ -65,6 +67,9 @@
     white-space: nowrap;
     text-overflow: none;
     height: fit-content;
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .card button {
@@ -88,12 +93,14 @@
     -webkit-box-orient: vertical;
     line-height: 1.5;
     max-height: 12em;
+    color: #c71585;
+    font-weight: 500;
 }
 
 button svg path,
 button svg rect,
 button svg polygon {
-    fill: #ffffff;
+    fill: #fff;
 }
 
 button svg {
@@ -107,20 +114,22 @@ button svg {
     flex-wrap: nowrap;
     width: fit-content;
 }
+
 .buttons * {
     box-sizing: border-box;
 }
 
 .close:hover {
-    background-color: #e81123;
+    background: linear-gradient(135deg, #ff1493, #ff69b4);
+    box-shadow: 0 2px 8px rgba(255, 20, 147, 0.4);
 }
 
 .maximize:hover {
-    background-color: #c042ff2e;
+    background: linear-gradient(135deg, #ffe6f5, #ffc0e5);
 }
 
 .minimize:hover {
-    background-color: #c042ff2e;
+    background: linear-gradient(135deg, #ffe6f5, #ffc0e5);
 }
 
 #pre {
@@ -128,7 +137,8 @@ button svg {
     width: 100%;
     padding: 10px;
     height: auto;
-    color: #bafff8;
+    color: #ff1493;
+    font-weight: 500;
 }
 
 .curlies {

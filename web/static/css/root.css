@@ -1,15 +1,15 @@
 :root {
-    --primary-color: #c042ff;
-    --secondary-color: #2e0043;
-    --border-color: #c042ff40;
-    --background-color: #140a1a;
-    --quaternary-color: #15001f;
-    --text-color: white;
+    --primary-color: #ff1493;
+    --secondary-color: #ffb3e6;
+    --border-color: #ff69b480;
+    --background-color: #ffc0e5;
+    --quaternary-color: #ffe6f5;
+    --text-color: #c71585;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: var(--background-color);
+    background: linear-gradient(135deg, #ffc0e5 0%, #ffb3e6 50%, #ffc0e5 100%);
     min-height: 100vh;
     height: 100vh;
     margin: 0;
@@ -21,8 +21,8 @@ body {
     flex-direction: row;
     align-items: center;
     height: 100vh;
-    background-color: var(--background-color);
-    color: white;
+    background: linear-gradient(135deg, #ffc0e5 0%, #ffb3e6 50%, #ffc0e5 100%);
+    color: #c71585;
     padding: 0;
     margin: 0;
 }
@@ -138,22 +138,22 @@ main {
 }
 
 .sidebar-button:hover {
-    background-color: var(--secondary-color);
+    background: linear-gradient(135deg, #ffe6f5, #ffc0e5);
+    box-shadow: 0 2px 8px rgba(255, 20, 147, 0.2);
 }
 
 .sidebar-button:active {
     padding: 7px;
-    border: solid 1px var(--primary-color);
+    border: solid 2px var(--primary-color);
     animation: sidebar-button-animation 0.1s ease-in-out forwards;
 }
 
 @keyframes sidebar-button-animation {
     from {
-        background-color: var(--primary-color);
+        background: linear-gradient(135deg, #ff69b4, #ff1493);
     }
 
     to {
-
         background-color: var(--quaternary-color);
     }
 }
@@ -161,7 +161,7 @@ main {
 .sidebar-button-icon {
     aspect-ratio: 1/1;
     height: 24px;
-    filter: brightness(0) invert(1);
+    filter: brightness(0) saturate(100%) invert(20%) sepia(95%) saturate(5000%) hue-rotate(315deg) brightness(90%) contrast(105%);
 }
 
 #sidebar-toggle-button {
@@ -237,9 +237,9 @@ main {
     aspect-ratio: 1/1;
     width: 100%;
     max-width: 128px;
-    border: 1px solid rgba(192, 66, 255, 0.6);
+    border: 3px solid #ff1493;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(192, 66, 255, 0.3);
+    box-shadow: 0 6px 16px rgba(255, 20, 147, 0.4), 0 0 20px rgba(255, 105, 180, 0.3);
 }
 
 #sidebar-profile-username-text {
@@ -247,30 +247,31 @@ main {
     display: block;
     text-align: center;
     font-size: 0.95rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.3px;
 }
 
 #sidebar-profile-username-text a {
-    color: #ffffff;
+    color: var(--text-color);
     text-decoration: none;
     display: inline-block;
-    padding: 6px 16px;
-    border-radius: 8px;
-    background: linear-gradient(135deg, rgba(192, 66, 255, 0.25), rgba(192, 66, 255, 0.1));
-    border: 1px solid rgba(192, 66, 255, 0.4);
+    padding: 8px 18px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ffe6f5, #ffc0e5);
+    border: 2px solid #ff69b4;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(192, 66, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(255, 20, 147, 0.25);
 }
 
 #sidebar-profile-username-text a:hover {
-    background: linear-gradient(135deg, rgba(192, 66, 255, 0.4), rgba(192, 66, 255, 0.2));
-    border-color: rgba(192, 66, 255, 0.6);
-    box-shadow: 0 4px 12px rgba(192, 66, 255, 0.35);
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+    color: #fff;
+    border-color: #ff1493;
+    box-shadow: 0 6px 16px rgba(255, 20, 147, 0.45);
     transform: translateY(-2px);
 }
 
 #sidebar-profile-username-text a:active {
     transform: translateY(0);
-    box-shadow: 0 2px 6px rgba(192, 66, 255, 0.3);
+    box-shadow: 0 2px 8px rgba(255, 20, 147, 0.3);
 }
