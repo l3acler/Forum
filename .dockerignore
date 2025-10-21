@@ -12,6 +12,7 @@ README.md
 *.so
 *.dylib
 
+
 # Test files
 *_test.go
 
