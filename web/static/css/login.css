@@ -531,6 +531,8 @@ body {
 }
 
 /* ===================== BACKGROUND ROTATOR ===================== */
+/* DISABLED - Background animation cancelled */
+/*
 .bg-rotator {
   --count: 3;
   --slot: 5s;
@@ -571,3 +573,4 @@ body {
     opacity: 0;
   }
 }
+*/
